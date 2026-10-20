@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VidMind — AI Video Assistant</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/script.js" defer></script>
+</head>
+
+<body>
+    <header class="navbar">
+        <a href="/" class="brand">
+            <span class="brand-icon">V</span>
+            <span>VidMind</span>
+        </a>
+        <span class="nav-label">AI VIDEO ASSISTANT</span>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <span class="eyebrow">YOUR PERSONAL VIDEO RESEARCHER</span>
+            <h1>Watch less.<br><span>Understand more.</span></h1>
+            <p>
+                Turn long videos into useful summaries, searchable transcripts,
+                and answers to your questions.
+            </p>
+        </section>
+
+        <section class="panel input-panel">
+            <label for="video-url">YouTube video URL</label>
+
+            <div class="url-input">
+                <span class="url-icon">▶</span>
+                <input
+                    id="video-url"
+                    type="url"
+                    placeholder="https://www.youtube.com/watch?v=..."
+                    autocomplete="url"
+                    required
+                >
+            </div>
+
+            <div class="form-bottom">
+                <div class="language-field">
+                    <label for="language">Transcript language</label>
+                    <select id="language">
+                        <option value="english">English</option>
+                        <option value="malayalam">Malayalam</option>
+                    </select>
+                </div>
+
+                <button id="process-button" class="primary-button">
+                    <span id="process-button-text">Process video</span>
+                    <span aria-hidden="true">→</span>
+                </button>
+            </div>
+
+            <p id="status" class="status" role="status" aria-live="polite">
+                Paste a YouTube link to get started.
+            </p>
+        </section>
+
+        <section id="results" class="results hidden">
+            <div class="section-heading">
+                <span class="eyebrow">YOUR VIDEO, SIMPLIFIED</span>
+                <h2 id="video-title">Video title</h2>
+            </div>
+
+            <section class="panel">
+                <div class="panel-heading">
+                    <h3>Summary</h3>
+                    <span class="tag">AI GENERATED</span>
+                </div>
+                <div id="summary" class="content-text"></div>
+            </section>
+
+            <section class="panel">
+                <div class="panel-heading">
+                    <h3>Ask this video</h3>
+                    <span class="tag">RAG POWERED</span>
+                </div>
+
+                <p class="muted">
+                    Ask a question about the video's content.
+                </p>
+
+                <form id="question-form">
+                    <div class="question-input">
+                        <input
+                            id="question"
+                            type="text"
+                            placeholder="What are the main points?"
+                            required
+                        >
+                        <button id="ask-button" type="submit">
+                            Ask →
+                        </button>
+                    </div>
+                </form>
+
+                <div id="answer" class="answer hidden"></div>
+            </section>
+
+            <section class="panel">
+                <div class="panel-heading">
+                    <h3>Transcript</h3>
+                    <button id="transcript-toggle" class="text-button"
+                        type="button" aria-expanded="false">
+                        Show transcript +
+                    </button>
+                </div>
+
+                <div id="transcript" class="transcript-content hidden"></div>
+            </section>
+        </section>
+
+        <footer>
+            VidMind · Powered by your Python AI pipeline
+        </footer>
+    </main>
+</body>
+</html>

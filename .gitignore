@@ -24,8 +24,6 @@ utils/downloads/
 *.m4a
 *.webm
 
-# Local vector database
-vector_db/
 
 # Logs and temporary runtime files
 *.log
@@ -45,3 +43,15 @@ Thumbs.db
 
 #files
 test.py
+
+# Docker and local deployment overrides
+.env.docker
+
+# ChromaDB and local vector data
+chroma_db/
+vector_db/
+
+# Downloaded model caches
+.cache/
+.cache/huggingface/
+.cache/torch/
